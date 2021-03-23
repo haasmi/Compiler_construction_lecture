@@ -1,4 +1,4 @@
-grammar Expr;		
+grammar Expr;
 prog:	(expr NEWLINE)* ;
 expr:	expr '*' expr       # multExpr
     |   expr '/' expr       # divExpr

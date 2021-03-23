@@ -1,0 +1,22 @@
+grammar Pipifax;
+comment : '#'ASCIINEWLINE;
+identifier : ID;
+integer : INT;
+pidouble : DOUBLE;
+string : STRING;
+array : ARRAY integer | pidouble | string;
+reference : '*' typeORef;
+typeORef : integer | pidouble | string | array;
+types : integer | pidouble | string | array | reference;
+parameters : identifier types;
+body : comment;
+function : 'func' identifier '(' parameters ')' types? '{' body '}';
+
+ARRAY : ('['[1-9]']')*;
+STRING : ["] (ASCII NEWLINE)* ["];
+DOUBLE : [-]?[0-9]*([.][0-9]*)?([Ee][+-]?[1-9][0-9]*)?;
+INT : [-]?[1-9][0-9]*;
+ID : [_a-zA-Z][a-zA-Z0-9_]*;
+NEWLINE : [\r\n]+ ;
+ASCII : [a-zA-Z0-9,. :;()]*;
+HASH : [#];
