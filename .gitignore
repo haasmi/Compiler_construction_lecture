@@ -26,8 +26,54 @@
 *.tar.gz
 *.rar
 
+#IntelliJ
 *.iml
-*.idea
+.idea/
+*.iws
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+### antlr ###
+# Maven build folders
+target/
+# ... but not code generation targets
+!tool/src/org/antlr/v4/codegen/target/
+# Node.js (npm and typings) cached dependencies
+node_modules/
+typings/
+
+# Ant build folders
+build/
+dist/
+lib/
+user.build.properties
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+# Generated files
+/out/
+/gen/
+/gen3/
+/gen4/
+/tool/playground/
+tmp/
+
+# Configurable build files
+bilder.py
+bilder.pyc
+bild.log
+
+bild_output.txt
+runtime/Cpp/demo/generated
+xcuserdata
+*.jar
+.vscode
