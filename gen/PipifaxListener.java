@@ -7,15 +7,25 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface PipifaxListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link PipifaxParser#comment}.
+	 * Enter a parse tree produced by {@link PipifaxParser#prg}.
 	 * @param ctx the parse tree
 	 */
-	void enterComment(PipifaxParser.CommentContext ctx);
+	void enterPrg(PipifaxParser.PrgContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PipifaxParser#comment}.
+	 * Exit a parse tree produced by {@link PipifaxParser#prg}.
 	 * @param ctx the parse tree
 	 */
-	void exitComment(PipifaxParser.CommentContext ctx);
+	void exitPrg(PipifaxParser.PrgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#expressions}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressions(PipifaxParser.ExpressionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#expressions}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressions(PipifaxParser.ExpressionsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PipifaxParser#identifier}.
 	 * @param ctx the parse tree
@@ -97,6 +107,16 @@ public interface PipifaxListener extends ParseTreeListener {
 	 */
 	void exitTypes(PipifaxParser.TypesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#typesKey}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypesKey(PipifaxParser.TypesKeyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#typesKey}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypesKey(PipifaxParser.TypesKeyContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PipifaxParser#parameters}.
 	 * @param ctx the parse tree
 	 */
@@ -106,6 +126,76 @@ public interface PipifaxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParameters(PipifaxParser.ParametersContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#vardef}.
+	 * @param ctx the parse tree
+	 */
+	void enterVardef(PipifaxParser.VardefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#vardef}.
+	 * @param ctx the parse tree
+	 */
+	void exitVardef(PipifaxParser.VardefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#funcCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncCall(PipifaxParser.FuncCallContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#funcCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncCall(PipifaxParser.FuncCallContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(PipifaxParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(PipifaxParser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#var}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar(PipifaxParser.VarContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#var}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar(PipifaxParser.VarContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition(PipifaxParser.ConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition(PipifaxParser.ConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(PipifaxParser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(PipifaxParser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatements(PipifaxParser.StatementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatements(PipifaxParser.StatementsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PipifaxParser#body}.
 	 * @param ctx the parse tree
@@ -126,4 +216,14 @@ public interface PipifaxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFunction(PipifaxParser.FunctionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#operator}.
+	 * @param ctx the parse tree
+	 */
+	void enterOperator(PipifaxParser.OperatorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#operator}.
+	 * @param ctx the parse tree
+	 */
+	void exitOperator(PipifaxParser.OperatorContext ctx);
 }
