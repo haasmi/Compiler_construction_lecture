@@ -10,11 +10,17 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link PipifaxParser#comment}.
+	 * Visit a parse tree produced by {@link PipifaxParser#prg}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitComment(PipifaxParser.CommentContext ctx);
+	T visitPrg(PipifaxParser.PrgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#expressions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpressions(PipifaxParser.ExpressionsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PipifaxParser#identifier}.
 	 * @param ctx the parse tree
@@ -64,11 +70,59 @@ public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTypes(PipifaxParser.TypesContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#typesKey}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypesKey(PipifaxParser.TypesKeyContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PipifaxParser#parameters}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitParameters(PipifaxParser.ParametersContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#vardef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVardef(PipifaxParser.VardefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#funcCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncCall(PipifaxParser.FuncCallContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#assignment}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignment(PipifaxParser.AssignmentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#var}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar(PipifaxParser.VarContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition(PipifaxParser.ConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#ifStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfStatement(PipifaxParser.IfStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#statements}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatements(PipifaxParser.StatementsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PipifaxParser#body}.
 	 * @param ctx the parse tree
@@ -81,4 +135,10 @@ public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFunction(PipifaxParser.FunctionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#operator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperator(PipifaxParser.OperatorContext ctx);
 }
