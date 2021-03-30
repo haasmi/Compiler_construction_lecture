@@ -1,4 +1,4 @@
-// Generated from C:/Users/Miriam/Desktop/GitHub/Compiler_construction_lecture\Pipifax.g4 by ANTLR 4.9.1
+// Generated from /home/tobi/coding/school/compilerwerkzeuge/Compiler_construction_lecture/Pipifax.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -19,21 +19,21 @@ public class PipifaxParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		COMMENT=25, ARRAY=26, STRING=27, DOUBLE=28, INT=29, ID=30, WHITE=31, ASCII=32, 
-		HASH=33;
+		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, COMMENT=31, 
+		ARRAY=32, STRING=33, DOUBLE=34, INT=35, ID=36, WHITE=37, ASCII=38, HASH=39;
 	public static final int
-		RULE_prg = 0, RULE_expressions = 1, RULE_identifier = 2, RULE_integer = 3, 
-		RULE_pidouble = 4, RULE_string = 5, RULE_array = 6, RULE_reference = 7, 
-		RULE_typeORef = 8, RULE_types = 9, RULE_typesKey = 10, RULE_parameters = 11, 
-		RULE_vardef = 12, RULE_funcCall = 13, RULE_assignment = 14, RULE_var = 15, 
-		RULE_condition = 16, RULE_ifStatement = 17, RULE_statements = 18, RULE_body = 19, 
-		RULE_function = 20, RULE_operator = 21;
+		RULE_prg = 0, RULE_identifier = 1, RULE_integer = 2, RULE_pidouble = 3, 
+		RULE_string = 4, RULE_array = 5, RULE_reference = 6, RULE_typeORef = 7, 
+		RULE_types = 8, RULE_typesKey = 9, RULE_parameters = 10, RULE_vardef = 11, 
+		RULE_funcCall = 12, RULE_assignment = 13, RULE_var = 14, RULE_condition = 15, 
+		RULE_ifStatement = 16, RULE_statements = 17, RULE_body = 18, RULE_function = 19, 
+		RULE_operator = 20, RULE_expr = 21;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"prg", "expressions", "identifier", "integer", "pidouble", "string", 
-			"array", "reference", "typeORef", "types", "typesKey", "parameters", 
-			"vardef", "funcCall", "assignment", "var", "condition", "ifStatement", 
-			"statements", "body", "function", "operator"
+			"prg", "identifier", "integer", "pidouble", "string", "array", "reference", 
+			"typeORef", "types", "typesKey", "parameters", "vardef", "funcCall", 
+			"assignment", "var", "condition", "ifStatement", "statements", "body", 
+			"function", "operator", "expr"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -42,7 +42,8 @@ public class PipifaxParser extends Parser {
 		return new String[] {
 			null, "'-'", "'*'", "'int'", "'double'", "'string'", "'['", "']'", "'var'", 
 			"'='", "'('", "','", "')'", "'if'", "'{'", "'}'", "'else'", "'func'", 
-			"'+'", "'^'", "'/'", "'<'", "'<='", "'>'", "'>='"
+			"'+'", "'^'", "'/'", "'<'", "'<='", "'>'", "'>='", "'=='", "'!='", "'%'", 
+			"'&&'", "'||'", "'!'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -50,8 +51,8 @@ public class PipifaxParser extends Parser {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, "COMMENT", "ARRAY", "STRING", "DOUBLE", "INT", "ID", "WHITE", "ASCII", 
-			"HASH"
+			null, null, null, null, null, null, null, "COMMENT", "ARRAY", "STRING", 
+			"DOUBLE", "INT", "ID", "WHITE", "ASCII", "HASH"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -106,11 +107,11 @@ public class PipifaxParser extends Parser {
 	}
 
 	public static class PrgContext extends ParserRuleContext {
-		public List<ExpressionsContext> expressions() {
-			return getRuleContexts(ExpressionsContext.class);
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
 		}
-		public ExpressionsContext expressions(int i) {
-			return getRuleContext(ExpressionsContext.class,i);
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
 		}
 		public PrgContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -145,93 +146,13 @@ public class PipifaxParser extends Parser {
 				{
 				{
 				setState(44);
-				expressions();
+				expr(0);
 				}
 				}
 				setState(47); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__16) | (1L << ID))) != 0) );
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ExpressionsContext extends ParserRuleContext {
-		public VardefContext vardef() {
-			return getRuleContext(VardefContext.class,0);
-		}
-		public FunctionContext function() {
-			return getRuleContext(FunctionContext.class,0);
-		}
-		public FuncCallContext funcCall() {
-			return getRuleContext(FuncCallContext.class,0);
-		}
-		public AssignmentContext assignment() {
-			return getRuleContext(AssignmentContext.class,0);
-		}
-		public ExpressionsContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expressions; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof PipifaxListener ) ((PipifaxListener)listener).enterExpressions(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof PipifaxListener ) ((PipifaxListener)listener).exitExpressions(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof PipifaxVisitor ) return ((PipifaxVisitor<? extends T>)visitor).visitExpressions(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ExpressionsContext expressions() throws RecognitionException {
-		ExpressionsContext _localctx = new ExpressionsContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_expressions);
-		try {
-			setState(53);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(49);
-				vardef();
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(50);
-				function();
-				}
-				break;
-			case 3:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(51);
-				funcCall();
-				}
-				break;
-			case 4:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(52);
-				assignment();
-				}
-				break;
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__7) | (1L << T__16) | (1L << T__29) | (1L << ID))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -268,11 +189,11 @@ public class PipifaxParser extends Parser {
 
 	public final IdentifierContext identifier() throws RecognitionException {
 		IdentifierContext _localctx = new IdentifierContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_identifier);
+		enterRule(_localctx, 2, RULE_identifier);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(55);
+			setState(49);
 			match(ID);
 			}
 		}
@@ -310,22 +231,22 @@ public class PipifaxParser extends Parser {
 
 	public final IntegerContext integer() throws RecognitionException {
 		IntegerContext _localctx = new IntegerContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_integer);
+		enterRule(_localctx, 4, RULE_integer);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(58);
+			setState(52);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__0) {
 				{
-				setState(57);
+				setState(51);
 				match(T__0);
 				}
 			}
 
-			setState(60);
+			setState(54);
 			match(INT);
 			}
 		}
@@ -363,22 +284,22 @@ public class PipifaxParser extends Parser {
 
 	public final PidoubleContext pidouble() throws RecognitionException {
 		PidoubleContext _localctx = new PidoubleContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_pidouble);
+		enterRule(_localctx, 6, RULE_pidouble);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(63);
+			setState(57);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__0) {
 				{
-				setState(62);
+				setState(56);
 				match(T__0);
 				}
 			}
 
-			setState(65);
+			setState(59);
 			match(DOUBLE);
 			}
 		}
@@ -416,11 +337,11 @@ public class PipifaxParser extends Parser {
 
 	public final StringContext string() throws RecognitionException {
 		StringContext _localctx = new StringContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_string);
+		enterRule(_localctx, 8, RULE_string);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(67);
+			setState(61);
 			match(STRING);
 			}
 		}
@@ -467,17 +388,17 @@ public class PipifaxParser extends Parser {
 
 	public final ArrayContext array() throws RecognitionException {
 		ArrayContext _localctx = new ArrayContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_array);
+		enterRule(_localctx, 10, RULE_array);
 		try {
-			setState(73);
+			setState(67);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ARRAY:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(69);
+				setState(63);
 				match(ARRAY);
-				setState(70);
+				setState(64);
 				integer();
 				}
 				break;
@@ -485,14 +406,14 @@ public class PipifaxParser extends Parser {
 			case DOUBLE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(71);
+				setState(65);
 				pidouble();
 				}
 				break;
 			case STRING:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(72);
+				setState(66);
 				string();
 				}
 				break;
@@ -536,13 +457,13 @@ public class PipifaxParser extends Parser {
 
 	public final ReferenceContext reference() throws RecognitionException {
 		ReferenceContext _localctx = new ReferenceContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_reference);
+		enterRule(_localctx, 12, RULE_reference);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(75);
+			setState(69);
 			match(T__1);
-			setState(76);
+			setState(70);
 			typeORef();
 			}
 		}
@@ -591,36 +512,36 @@ public class PipifaxParser extends Parser {
 
 	public final TypeORefContext typeORef() throws RecognitionException {
 		TypeORefContext _localctx = new TypeORefContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_typeORef);
+		enterRule(_localctx, 14, RULE_typeORef);
 		try {
-			setState(82);
+			setState(76);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(78);
+				setState(72);
 				integer();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(79);
+				setState(73);
 				pidouble();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(80);
+				setState(74);
 				string();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(81);
+				setState(75);
 				array();
 				}
 				break;
@@ -674,43 +595,43 @@ public class PipifaxParser extends Parser {
 
 	public final TypesContext types() throws RecognitionException {
 		TypesContext _localctx = new TypesContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_types);
+		enterRule(_localctx, 16, RULE_types);
 		try {
-			setState(89);
+			setState(83);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(84);
+				setState(78);
 				integer();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(85);
+				setState(79);
 				pidouble();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(86);
+				setState(80);
 				string();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(87);
+				setState(81);
 				array();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(88);
+				setState(82);
 				reference();
 				}
 				break;
@@ -753,29 +674,29 @@ public class PipifaxParser extends Parser {
 
 	public final TypesKeyContext typesKey() throws RecognitionException {
 		TypesKeyContext _localctx = new TypesKeyContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_typesKey);
+		enterRule(_localctx, 18, RULE_typesKey);
 		try {
-			setState(99);
+			setState(93);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__2:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(91);
+				setState(85);
 				match(T__2);
 				}
 				break;
 			case T__3:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(92);
+				setState(86);
 				match(T__3);
 				}
 				break;
 			case T__4:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(93);
+				setState(87);
 				match(T__4);
 				}
 				break;
@@ -783,14 +704,14 @@ public class PipifaxParser extends Parser {
 				enterOuterAlt(_localctx, 4);
 				{
 				{
-				setState(94);
+				setState(88);
 				match(T__5);
-				setState(95);
+				setState(89);
 				match(INT);
-				setState(96);
+				setState(90);
 				match(T__6);
 				}
-				setState(98);
+				setState(92);
 				typesKey();
 				}
 				break;
@@ -837,13 +758,13 @@ public class PipifaxParser extends Parser {
 
 	public final ParametersContext parameters() throws RecognitionException {
 		ParametersContext _localctx = new ParametersContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_parameters);
+		enterRule(_localctx, 20, RULE_parameters);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(101);
+			setState(95);
 			identifier();
-			setState(102);
+			setState(96);
 			types();
 			}
 		}
@@ -889,29 +810,28 @@ public class PipifaxParser extends Parser {
 
 	public final VardefContext vardef() throws RecognitionException {
 		VardefContext _localctx = new VardefContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_vardef);
-		int _la;
+		enterRule(_localctx, 22, RULE_vardef);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(104);
+			setState(98);
 			match(T__7);
-			setState(105);
+			setState(99);
 			identifier();
-			setState(106);
+			setState(100);
 			typesKey();
-			setState(109);
+			setState(103);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==T__8) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			case 1:
 				{
-				setState(107);
+				setState(101);
 				match(T__8);
-				setState(108);
+				setState(102);
 				types();
 				}
+				break;
 			}
-
 			}
 		}
 		catch (RecognitionException re) {
@@ -956,42 +876,42 @@ public class PipifaxParser extends Parser {
 
 	public final FuncCallContext funcCall() throws RecognitionException {
 		FuncCallContext _localctx = new FuncCallContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_funcCall);
+		enterRule(_localctx, 24, RULE_funcCall);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(111);
+			setState(105);
 			identifier();
-			setState(112);
+			setState(106);
 			match(T__9);
-			setState(114);
+			setState(108);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << ARRAY) | (1L << STRING) | (1L << DOUBLE) | (1L << INT))) != 0)) {
 				{
-				setState(113);
+				setState(107);
 				types();
 				}
 			}
 
-			setState(120);
+			setState(114);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==T__10) {
 				{
 				{
-				setState(116);
+				setState(110);
 				match(T__10);
-				setState(117);
+				setState(111);
 				types();
 				}
 				}
-				setState(122);
+				setState(116);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(123);
+			setState(117);
 			match(T__11);
 			}
 		}
@@ -1037,20 +957,20 @@ public class PipifaxParser extends Parser {
 
 	public final AssignmentContext assignment() throws RecognitionException {
 		AssignmentContext _localctx = new AssignmentContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_assignment);
+		enterRule(_localctx, 26, RULE_assignment);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(125);
+			setState(119);
 			identifier();
-			setState(126);
+			setState(120);
 			match(T__8);
-			setState(129);
+			setState(123);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
 				{
-				setState(127);
+				setState(121);
 				funcCall();
 				}
 				break;
@@ -1061,7 +981,7 @@ public class PipifaxParser extends Parser {
 			case DOUBLE:
 			case INT:
 				{
-				setState(128);
+				setState(122);
 				types();
 				}
 				break;
@@ -1109,15 +1029,15 @@ public class PipifaxParser extends Parser {
 
 	public final VarContext var() throws RecognitionException {
 		VarContext _localctx = new VarContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_var);
+		enterRule(_localctx, 28, RULE_var);
 		try {
-			setState(133);
+			setState(127);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(131);
+				setState(125);
 				identifier();
 				}
 				break;
@@ -1129,7 +1049,7 @@ public class PipifaxParser extends Parser {
 			case INT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(132);
+				setState(126);
 				types();
 				}
 				break;
@@ -1179,26 +1099,26 @@ public class PipifaxParser extends Parser {
 
 	public final ConditionContext condition() throws RecognitionException {
 		ConditionContext _localctx = new ConditionContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_condition);
+		enterRule(_localctx, 30, RULE_condition);
 		try {
-			setState(140);
+			setState(134);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(135);
+				setState(129);
 				var();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(136);
+				setState(130);
 				var();
-				setState(137);
+				setState(131);
 				operator();
-				setState(138);
+				setState(132);
 				var();
 				}
 				break;
@@ -1246,57 +1166,57 @@ public class PipifaxParser extends Parser {
 
 	public final IfStatementContext ifStatement() throws RecognitionException {
 		IfStatementContext _localctx = new IfStatementContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_ifStatement);
+		enterRule(_localctx, 32, RULE_ifStatement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(142);
+			setState(136);
 			match(T__12);
-			setState(143);
+			setState(137);
 			condition();
-			setState(144);
+			setState(138);
 			match(T__13);
-			setState(146); 
+			setState(140); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(145);
+				setState(139);
 				statements();
 				}
 				}
-				setState(148); 
+				setState(142); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__12) | (1L << ID))) != 0) );
-			setState(150);
+			setState(144);
 			match(T__14);
-			setState(160);
+			setState(154);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__15) {
 				{
-				setState(151);
+				setState(145);
 				match(T__15);
-				setState(152);
+				setState(146);
 				match(T__13);
-				setState(154); 
+				setState(148); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
 					{
 					{
-					setState(153);
+					setState(147);
 					statements();
 					}
 					}
-					setState(156); 
+					setState(150); 
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__12) | (1L << ID))) != 0) );
-				setState(158);
+				setState(152);
 				match(T__14);
 				}
 			}
@@ -1348,36 +1268,36 @@ public class PipifaxParser extends Parser {
 
 	public final StatementsContext statements() throws RecognitionException {
 		StatementsContext _localctx = new StatementsContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_statements);
+		enterRule(_localctx, 34, RULE_statements);
 		try {
-			setState(166);
+			setState(160);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(162);
+				setState(156);
 				vardef();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(163);
+				setState(157);
 				funcCall();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(164);
+				setState(158);
 				assignment();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(165);
+				setState(159);
 				ifStatement();
 				}
 				break;
@@ -1422,28 +1342,28 @@ public class PipifaxParser extends Parser {
 
 	public final BodyContext body() throws RecognitionException {
 		BodyContext _localctx = new BodyContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_body);
+		enterRule(_localctx, 36, RULE_body);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(168);
+			setState(162);
 			match(T__13);
-			setState(170); 
+			setState(164); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(169);
+				setState(163);
 				statements();
 				}
 				}
-				setState(172); 
+				setState(166); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__7) | (1L << T__12) | (1L << ID))) != 0) );
-			setState(174);
+			setState(168);
 			match(T__14);
 			}
 		}
@@ -1492,40 +1412,40 @@ public class PipifaxParser extends Parser {
 
 	public final FunctionContext function() throws RecognitionException {
 		FunctionContext _localctx = new FunctionContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_function);
+		enterRule(_localctx, 38, RULE_function);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(176);
+			setState(170);
 			match(T__16);
-			setState(177);
+			setState(171);
 			identifier();
-			setState(178);
+			setState(172);
 			match(T__9);
-			setState(180);
+			setState(174);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ID) {
 				{
-				setState(179);
+				setState(173);
 				parameters();
 				}
 			}
 
-			setState(182);
+			setState(176);
 			match(T__11);
-			setState(184);
+			setState(178);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << ARRAY) | (1L << STRING) | (1L << DOUBLE) | (1L << INT))) != 0)) {
 				{
-				setState(183);
+				setState(177);
 				types();
 				}
 			}
 
-			setState(186);
+			setState(180);
 			body();
 			}
 		}
@@ -1562,14 +1482,14 @@ public class PipifaxParser extends Parser {
 
 	public final OperatorContext operator() throws RecognitionException {
 		OperatorContext _localctx = new OperatorContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_operator);
+		enterRule(_localctx, 40, RULE_operator);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(188);
+			setState(182);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -1590,66 +1510,298 @@ public class PipifaxParser extends Parser {
 		return _localctx;
 	}
 
+	public static class ExprContext extends ParserRuleContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public FuncCallContext funcCall() {
+			return getRuleContext(FuncCallContext.class,0);
+		}
+		public FunctionContext function() {
+			return getRuleContext(FunctionContext.class,0);
+		}
+		public VardefContext vardef() {
+			return getRuleContext(VardefContext.class,0);
+		}
+		public AssignmentContext assignment() {
+			return getRuleContext(AssignmentContext.class,0);
+		}
+		public ExprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof PipifaxListener ) ((PipifaxListener)listener).enterExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof PipifaxListener ) ((PipifaxListener)listener).exitExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PipifaxVisitor ) return ((PipifaxVisitor<? extends T>)visitor).visitExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ExprContext expr() throws RecognitionException {
+		return expr(0);
+	}
+
+	private ExprContext expr(int _p) throws RecognitionException {
+		ParserRuleContext _parentctx = _ctx;
+		int _parentState = getState();
+		ExprContext _localctx = new ExprContext(_ctx, _parentState);
+		ExprContext _prevctx = _localctx;
+		int _startState = 42;
+		enterRecursionRule(_localctx, 42, RULE_expr, _p);
+		int _la;
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(192);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
+			case 1:
+				{
+				setState(185);
+				_la = _input.LA(1);
+				if ( !(_la==T__0 || _la==T__29) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(186);
+				expr(6);
+				}
+				break;
+			case 2:
+				{
+				setState(187);
+				funcCall();
+				}
+				break;
+			case 3:
+				{
+				setState(188);
+				function();
+				}
+				break;
+			case 4:
+				{
+				setState(189);
+				vardef();
+				}
+				break;
+			case 5:
+				{
+				setState(190);
+				assignment();
+				}
+				break;
+			case 6:
+				{
+				setState(191);
+				function();
+				}
+				break;
+			}
+			_ctx.stop = _input.LT(-1);
+			setState(208);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,22,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					if ( _parseListeners!=null ) triggerExitRuleEvent();
+					_prevctx = _localctx;
+					{
+					setState(206);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
+					case 1:
+						{
+						_localctx = new ExprContext(_parentctx, _parentState);
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(194);
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						setState(195);
+						_la = _input.LA(1);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__19) | (1L << T__26))) != 0)) ) {
+						_errHandler.recoverInline(this);
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
+							consume();
+						}
+						setState(196);
+						expr(11);
+						}
+						break;
+					case 2:
+						{
+						_localctx = new ExprContext(_parentctx, _parentState);
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(197);
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						setState(198);
+						_la = _input.LA(1);
+						if ( !(_la==T__0 || _la==T__17) ) {
+						_errHandler.recoverInline(this);
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
+							consume();
+						}
+						setState(199);
+						expr(10);
+						}
+						break;
+					case 3:
+						{
+						_localctx = new ExprContext(_parentctx, _parentState);
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(200);
+						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
+						setState(201);
+						match(T__27);
+						setState(202);
+						expr(9);
+						}
+						break;
+					case 4:
+						{
+						_localctx = new ExprContext(_parentctx, _parentState);
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(203);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(204);
+						match(T__28);
+						setState(205);
+						expr(8);
+						}
+						break;
+					}
+					} 
+				}
+				setState(210);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,22,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			unrollRecursionContexts(_parentctx);
+		}
+		return _localctx;
+	}
+
+	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
+		switch (ruleIndex) {
+		case 21:
+			return expr_sempred((ExprContext)_localctx, predIndex);
+		}
+		return true;
+	}
+	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
+		switch (predIndex) {
+		case 0:
+			return precpred(_ctx, 10);
+		case 1:
+			return precpred(_ctx, 9);
+		case 2:
+			return precpred(_ctx, 8);
+		case 3:
+			return precpred(_ctx, 7);
+		}
+		return true;
+	}
+
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3#\u00c1\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)\u00d6\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\3\2\6\2\60\n\2\r\2"+
-		"\16\2\61\3\3\3\3\3\3\3\3\5\38\n\3\3\4\3\4\3\5\5\5=\n\5\3\5\3\5\3\6\5\6"+
-		"B\n\6\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\b\5\bL\n\b\3\t\3\t\3\t\3\n\3\n\3\n"+
-		"\3\n\5\nU\n\n\3\13\3\13\3\13\3\13\3\13\5\13\\\n\13\3\f\3\f\3\f\3\f\3\f"+
-		"\3\f\3\f\3\f\5\ff\n\f\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\5\16p\n\16"+
-		"\3\17\3\17\3\17\5\17u\n\17\3\17\3\17\7\17y\n\17\f\17\16\17|\13\17\3\17"+
-		"\3\17\3\20\3\20\3\20\3\20\5\20\u0084\n\20\3\21\3\21\5\21\u0088\n\21\3"+
-		"\22\3\22\3\22\3\22\3\22\5\22\u008f\n\22\3\23\3\23\3\23\3\23\6\23\u0095"+
-		"\n\23\r\23\16\23\u0096\3\23\3\23\3\23\3\23\6\23\u009d\n\23\r\23\16\23"+
-		"\u009e\3\23\3\23\5\23\u00a3\n\23\3\24\3\24\3\24\3\24\5\24\u00a9\n\24\3"+
-		"\25\3\25\6\25\u00ad\n\25\r\25\16\25\u00ae\3\25\3\25\3\26\3\26\3\26\3\26"+
-		"\5\26\u00b7\n\26\3\26\3\26\5\26\u00bb\n\26\3\26\3\26\3\27\3\27\3\27\2"+
-		"\2\30\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,\2\3\4\2\3\3\24\32"+
-		"\2\u00cb\2/\3\2\2\2\4\67\3\2\2\2\69\3\2\2\2\b<\3\2\2\2\nA\3\2\2\2\fE\3"+
-		"\2\2\2\16K\3\2\2\2\20M\3\2\2\2\22T\3\2\2\2\24[\3\2\2\2\26e\3\2\2\2\30"+
-		"g\3\2\2\2\32j\3\2\2\2\34q\3\2\2\2\36\177\3\2\2\2 \u0087\3\2\2\2\"\u008e"+
-		"\3\2\2\2$\u0090\3\2\2\2&\u00a8\3\2\2\2(\u00aa\3\2\2\2*\u00b2\3\2\2\2,"+
-		"\u00be\3\2\2\2.\60\5\4\3\2/.\3\2\2\2\60\61\3\2\2\2\61/\3\2\2\2\61\62\3"+
-		"\2\2\2\62\3\3\2\2\2\638\5\32\16\2\648\5*\26\2\658\5\34\17\2\668\5\36\20"+
-		"\2\67\63\3\2\2\2\67\64\3\2\2\2\67\65\3\2\2\2\67\66\3\2\2\28\5\3\2\2\2"+
-		"9:\7 \2\2:\7\3\2\2\2;=\7\3\2\2<;\3\2\2\2<=\3\2\2\2=>\3\2\2\2>?\7\37\2"+
-		"\2?\t\3\2\2\2@B\7\3\2\2A@\3\2\2\2AB\3\2\2\2BC\3\2\2\2CD\7\36\2\2D\13\3"+
-		"\2\2\2EF\7\35\2\2F\r\3\2\2\2GH\7\34\2\2HL\5\b\5\2IL\5\n\6\2JL\5\f\7\2"+
-		"KG\3\2\2\2KI\3\2\2\2KJ\3\2\2\2L\17\3\2\2\2MN\7\4\2\2NO\5\22\n\2O\21\3"+
-		"\2\2\2PU\5\b\5\2QU\5\n\6\2RU\5\f\7\2SU\5\16\b\2TP\3\2\2\2TQ\3\2\2\2TR"+
-		"\3\2\2\2TS\3\2\2\2U\23\3\2\2\2V\\\5\b\5\2W\\\5\n\6\2X\\\5\f\7\2Y\\\5\16"+
-		"\b\2Z\\\5\20\t\2[V\3\2\2\2[W\3\2\2\2[X\3\2\2\2[Y\3\2\2\2[Z\3\2\2\2\\\25"+
-		"\3\2\2\2]f\7\5\2\2^f\7\6\2\2_f\7\7\2\2`a\7\b\2\2ab\7\37\2\2bc\7\t\2\2"+
-		"cd\3\2\2\2df\5\26\f\2e]\3\2\2\2e^\3\2\2\2e_\3\2\2\2e`\3\2\2\2f\27\3\2"+
-		"\2\2gh\5\6\4\2hi\5\24\13\2i\31\3\2\2\2jk\7\n\2\2kl\5\6\4\2lo\5\26\f\2"+
-		"mn\7\13\2\2np\5\24\13\2om\3\2\2\2op\3\2\2\2p\33\3\2\2\2qr\5\6\4\2rt\7"+
-		"\f\2\2su\5\24\13\2ts\3\2\2\2tu\3\2\2\2uz\3\2\2\2vw\7\r\2\2wy\5\24\13\2"+
-		"xv\3\2\2\2y|\3\2\2\2zx\3\2\2\2z{\3\2\2\2{}\3\2\2\2|z\3\2\2\2}~\7\16\2"+
-		"\2~\35\3\2\2\2\177\u0080\5\6\4\2\u0080\u0083\7\13\2\2\u0081\u0084\5\34"+
-		"\17\2\u0082\u0084\5\24\13\2\u0083\u0081\3\2\2\2\u0083\u0082\3\2\2\2\u0084"+
-		"\37\3\2\2\2\u0085\u0088\5\6\4\2\u0086\u0088\5\24\13\2\u0087\u0085\3\2"+
-		"\2\2\u0087\u0086\3\2\2\2\u0088!\3\2\2\2\u0089\u008f\5 \21\2\u008a\u008b"+
-		"\5 \21\2\u008b\u008c\5,\27\2\u008c\u008d\5 \21\2\u008d\u008f\3\2\2\2\u008e"+
-		"\u0089\3\2\2\2\u008e\u008a\3\2\2\2\u008f#\3\2\2\2\u0090\u0091\7\17\2\2"+
-		"\u0091\u0092\5\"\22\2\u0092\u0094\7\20\2\2\u0093\u0095\5&\24\2\u0094\u0093"+
-		"\3\2\2\2\u0095\u0096\3\2\2\2\u0096\u0094\3\2\2\2\u0096\u0097\3\2\2\2\u0097"+
-		"\u0098\3\2\2\2\u0098\u00a2\7\21\2\2\u0099\u009a\7\22\2\2\u009a\u009c\7"+
-		"\20\2\2\u009b\u009d\5&\24\2\u009c\u009b\3\2\2\2\u009d\u009e\3\2\2\2\u009e"+
-		"\u009c\3\2\2\2\u009e\u009f\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\u00a1\7\21"+
-		"\2\2\u00a1\u00a3\3\2\2\2\u00a2\u0099\3\2\2\2\u00a2\u00a3\3\2\2\2\u00a3"+
-		"%\3\2\2\2\u00a4\u00a9\5\32\16\2\u00a5\u00a9\5\34\17\2\u00a6\u00a9\5\36"+
-		"\20\2\u00a7\u00a9\5$\23\2\u00a8\u00a4\3\2\2\2\u00a8\u00a5\3\2\2\2\u00a8"+
-		"\u00a6\3\2\2\2\u00a8\u00a7\3\2\2\2\u00a9\'\3\2\2\2\u00aa\u00ac\7\20\2"+
-		"\2\u00ab\u00ad\5&\24\2\u00ac\u00ab\3\2\2\2\u00ad\u00ae\3\2\2\2\u00ae\u00ac"+
-		"\3\2\2\2\u00ae\u00af\3\2\2\2\u00af\u00b0\3\2\2\2\u00b0\u00b1\7\21\2\2"+
-		"\u00b1)\3\2\2\2\u00b2\u00b3\7\23\2\2\u00b3\u00b4\5\6\4\2\u00b4\u00b6\7"+
-		"\f\2\2\u00b5\u00b7\5\30\r\2\u00b6\u00b5\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7"+
-		"\u00b8\3\2\2\2\u00b8\u00ba\7\16\2\2\u00b9\u00bb\5\24\13\2\u00ba\u00b9"+
-		"\3\2\2\2\u00ba\u00bb\3\2\2\2\u00bb\u00bc\3\2\2\2\u00bc\u00bd\5(\25\2\u00bd"+
-		"+\3\2\2\2\u00be\u00bf\t\2\2\2\u00bf-\3\2\2\2\27\61\67<AKT[eotz\u0083\u0087"+
-		"\u008e\u0096\u009e\u00a2\u00a8\u00ae\u00b6\u00ba";
+		"\16\2\61\3\3\3\3\3\4\5\4\67\n\4\3\4\3\4\3\5\5\5<\n\5\3\5\3\5\3\6\3\6\3"+
+		"\7\3\7\3\7\3\7\5\7F\n\7\3\b\3\b\3\b\3\t\3\t\3\t\3\t\5\tO\n\t\3\n\3\n\3"+
+		"\n\3\n\3\n\5\nV\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13`\n\13"+
+		"\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\5\rj\n\r\3\16\3\16\3\16\5\16o\n\16\3"+
+		"\16\3\16\7\16s\n\16\f\16\16\16v\13\16\3\16\3\16\3\17\3\17\3\17\3\17\5"+
+		"\17~\n\17\3\20\3\20\5\20\u0082\n\20\3\21\3\21\3\21\3\21\3\21\5\21\u0089"+
+		"\n\21\3\22\3\22\3\22\3\22\6\22\u008f\n\22\r\22\16\22\u0090\3\22\3\22\3"+
+		"\22\3\22\6\22\u0097\n\22\r\22\16\22\u0098\3\22\3\22\5\22\u009d\n\22\3"+
+		"\23\3\23\3\23\3\23\5\23\u00a3\n\23\3\24\3\24\6\24\u00a7\n\24\r\24\16\24"+
+		"\u00a8\3\24\3\24\3\25\3\25\3\25\3\25\5\25\u00b1\n\25\3\25\3\25\5\25\u00b5"+
+		"\n\25\3\25\3\25\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\5\27"+
+		"\u00c3\n\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\27"+
+		"\7\27\u00d1\n\27\f\27\16\27\u00d4\13\27\3\27\2\3,\30\2\4\6\b\n\f\16\20"+
+		"\22\24\26\30\32\34\36 \"$&(*,\2\6\4\2\3\3\24\34\4\2\3\3  \5\2\4\4\26\26"+
+		"\35\35\4\2\3\3\24\24\2\u00e6\2/\3\2\2\2\4\63\3\2\2\2\6\66\3\2\2\2\b;\3"+
+		"\2\2\2\n?\3\2\2\2\fE\3\2\2\2\16G\3\2\2\2\20N\3\2\2\2\22U\3\2\2\2\24_\3"+
+		"\2\2\2\26a\3\2\2\2\30d\3\2\2\2\32k\3\2\2\2\34y\3\2\2\2\36\u0081\3\2\2"+
+		"\2 \u0088\3\2\2\2\"\u008a\3\2\2\2$\u00a2\3\2\2\2&\u00a4\3\2\2\2(\u00ac"+
+		"\3\2\2\2*\u00b8\3\2\2\2,\u00c2\3\2\2\2.\60\5,\27\2/.\3\2\2\2\60\61\3\2"+
+		"\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\3\3\2\2\2\63\64\7&\2\2\64\5\3\2\2\2"+
+		"\65\67\7\3\2\2\66\65\3\2\2\2\66\67\3\2\2\2\678\3\2\2\289\7%\2\29\7\3\2"+
+		"\2\2:<\7\3\2\2;:\3\2\2\2;<\3\2\2\2<=\3\2\2\2=>\7$\2\2>\t\3\2\2\2?@\7#"+
+		"\2\2@\13\3\2\2\2AB\7\"\2\2BF\5\6\4\2CF\5\b\5\2DF\5\n\6\2EA\3\2\2\2EC\3"+
+		"\2\2\2ED\3\2\2\2F\r\3\2\2\2GH\7\4\2\2HI\5\20\t\2I\17\3\2\2\2JO\5\6\4\2"+
+		"KO\5\b\5\2LO\5\n\6\2MO\5\f\7\2NJ\3\2\2\2NK\3\2\2\2NL\3\2\2\2NM\3\2\2\2"+
+		"O\21\3\2\2\2PV\5\6\4\2QV\5\b\5\2RV\5\n\6\2SV\5\f\7\2TV\5\16\b\2UP\3\2"+
+		"\2\2UQ\3\2\2\2UR\3\2\2\2US\3\2\2\2UT\3\2\2\2V\23\3\2\2\2W`\7\5\2\2X`\7"+
+		"\6\2\2Y`\7\7\2\2Z[\7\b\2\2[\\\7%\2\2\\]\7\t\2\2]^\3\2\2\2^`\5\24\13\2"+
+		"_W\3\2\2\2_X\3\2\2\2_Y\3\2\2\2_Z\3\2\2\2`\25\3\2\2\2ab\5\4\3\2bc\5\22"+
+		"\n\2c\27\3\2\2\2de\7\n\2\2ef\5\4\3\2fi\5\24\13\2gh\7\13\2\2hj\5\22\n\2"+
+		"ig\3\2\2\2ij\3\2\2\2j\31\3\2\2\2kl\5\4\3\2ln\7\f\2\2mo\5\22\n\2nm\3\2"+
+		"\2\2no\3\2\2\2ot\3\2\2\2pq\7\r\2\2qs\5\22\n\2rp\3\2\2\2sv\3\2\2\2tr\3"+
+		"\2\2\2tu\3\2\2\2uw\3\2\2\2vt\3\2\2\2wx\7\16\2\2x\33\3\2\2\2yz\5\4\3\2"+
+		"z}\7\13\2\2{~\5\32\16\2|~\5\22\n\2}{\3\2\2\2}|\3\2\2\2~\35\3\2\2\2\177"+
+		"\u0082\5\4\3\2\u0080\u0082\5\22\n\2\u0081\177\3\2\2\2\u0081\u0080\3\2"+
+		"\2\2\u0082\37\3\2\2\2\u0083\u0089\5\36\20\2\u0084\u0085\5\36\20\2\u0085"+
+		"\u0086\5*\26\2\u0086\u0087\5\36\20\2\u0087\u0089\3\2\2\2\u0088\u0083\3"+
+		"\2\2\2\u0088\u0084\3\2\2\2\u0089!\3\2\2\2\u008a\u008b\7\17\2\2\u008b\u008c"+
+		"\5 \21\2\u008c\u008e\7\20\2\2\u008d\u008f\5$\23\2\u008e\u008d\3\2\2\2"+
+		"\u008f\u0090\3\2\2\2\u0090\u008e\3\2\2\2\u0090\u0091\3\2\2\2\u0091\u0092"+
+		"\3\2\2\2\u0092\u009c\7\21\2\2\u0093\u0094\7\22\2\2\u0094\u0096\7\20\2"+
+		"\2\u0095\u0097\5$\23\2\u0096\u0095\3\2\2\2\u0097\u0098\3\2\2\2\u0098\u0096"+
+		"\3\2\2\2\u0098\u0099\3\2\2\2\u0099\u009a\3\2\2\2\u009a\u009b\7\21\2\2"+
+		"\u009b\u009d\3\2\2\2\u009c\u0093\3\2\2\2\u009c\u009d\3\2\2\2\u009d#\3"+
+		"\2\2\2\u009e\u00a3\5\30\r\2\u009f\u00a3\5\32\16\2\u00a0\u00a3\5\34\17"+
+		"\2\u00a1\u00a3\5\"\22\2\u00a2\u009e\3\2\2\2\u00a2\u009f\3\2\2\2\u00a2"+
+		"\u00a0\3\2\2\2\u00a2\u00a1\3\2\2\2\u00a3%\3\2\2\2\u00a4\u00a6\7\20\2\2"+
+		"\u00a5\u00a7\5$\23\2\u00a6\u00a5\3\2\2\2\u00a7\u00a8\3\2\2\2\u00a8\u00a6"+
+		"\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\u00aa\3\2\2\2\u00aa\u00ab\7\21\2\2"+
+		"\u00ab\'\3\2\2\2\u00ac\u00ad\7\23\2\2\u00ad\u00ae\5\4\3\2\u00ae\u00b0"+
+		"\7\f\2\2\u00af\u00b1\5\26\f\2\u00b0\u00af\3\2\2\2\u00b0\u00b1\3\2\2\2"+
+		"\u00b1\u00b2\3\2\2\2\u00b2\u00b4\7\16\2\2\u00b3\u00b5\5\22\n\2\u00b4\u00b3"+
+		"\3\2\2\2\u00b4\u00b5\3\2\2\2\u00b5\u00b6\3\2\2\2\u00b6\u00b7\5&\24\2\u00b7"+
+		")\3\2\2\2\u00b8\u00b9\t\2\2\2\u00b9+\3\2\2\2\u00ba\u00bb\b\27\1\2\u00bb"+
+		"\u00bc\t\3\2\2\u00bc\u00c3\5,\27\b\u00bd\u00c3\5\32\16\2\u00be\u00c3\5"+
+		"(\25\2\u00bf\u00c3\5\30\r\2\u00c0\u00c3\5\34\17\2\u00c1\u00c3\5(\25\2"+
+		"\u00c2\u00ba\3\2\2\2\u00c2\u00bd\3\2\2\2\u00c2\u00be\3\2\2\2\u00c2\u00bf"+
+		"\3\2\2\2\u00c2\u00c0\3\2\2\2\u00c2\u00c1\3\2\2\2\u00c3\u00d2\3\2\2\2\u00c4"+
+		"\u00c5\f\f\2\2\u00c5\u00c6\t\4\2\2\u00c6\u00d1\5,\27\r\u00c7\u00c8\f\13"+
+		"\2\2\u00c8\u00c9\t\5\2\2\u00c9\u00d1\5,\27\f\u00ca\u00cb\f\n\2\2\u00cb"+
+		"\u00cc\7\36\2\2\u00cc\u00d1\5,\27\13\u00cd\u00ce\f\t\2\2\u00ce\u00cf\7"+
+		"\37\2\2\u00cf\u00d1\5,\27\n\u00d0\u00c4\3\2\2\2\u00d0\u00c7\3\2\2\2\u00d0"+
+		"\u00ca\3\2\2\2\u00d0\u00cd\3\2\2\2\u00d1\u00d4\3\2\2\2\u00d2\u00d0\3\2"+
+		"\2\2\u00d2\u00d3\3\2\2\2\u00d3-\3\2\2\2\u00d4\u00d2\3\2\2\2\31\61\66;"+
+		"ENU_int}\u0081\u0088\u0090\u0098\u009c\u00a2\u00a8\u00b0\u00b4\u00c2\u00d0"+
+		"\u00d2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

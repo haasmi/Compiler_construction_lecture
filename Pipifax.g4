@@ -1,6 +1,5 @@
 grammar Pipifax;
-prg : expressions+;
-expressions: vardef | function | funcCall | assignment;
+prg : expr+;
 identifier : ID;
 integer : '-'? INT;
 pidouble : '-'? DOUBLE;
@@ -14,13 +13,29 @@ parameters : identifier types;
 vardef : 'var' identifier typesKey ( '=' types)?;
 funcCall : identifier '(' types? (',' types)* ')';
 assignment : identifier '=' (funcCall | types);
-var: identifier | types;
-condition: var | var operator var;
+var : identifier | types;
+condition : expr;
 ifStatement : 'if' condition '{' statements+ '}' ('else' '{' statements+ '}')?;
-statements : vardef | funcCall | assignment | ifStatement;
+whileStatement : 'while' condition '{' statements+ '}';
+statements : vardef | funcCall | assignment | ifStatement | whileStatement;
 body : '{' statements+ '}';
-function : 'func' identifier '(' parameters? ')' types? body;
-operator: '+'| '-' | '^' | '/' | '<' | '<=' | '>' | '>=' ;
+function : 'func' identifier '(' parameters? ')' typesKey? body;
+operator: '+' | '-' | '^' | '/' | '<' | '<=' | '>' | '>=' | '==' | '!=' | '&&' | '||' | '!' | '<=>';
+expr
+    : expr ('*' | '/' | '%') expr
+    | expr ('+' | '-') expr
+    | expr ('<' | '<=' | '>' | '>=' | '==' | '!=' | '<=>') expr
+    | expr '&&' expr
+    | expr '||' expr
+    | ('-' | '!') expr
+    | expr operator expr
+    | funcCall
+    | function
+    | vardef
+    | assignment
+    | function
+    ;
+
 
 COMMENT: [#] .* [\n] -> skip;
 ARRAY : ('['[1-9]']')*;
@@ -29,5 +44,4 @@ DOUBLE : [0-9]*([.][0-9]*)?([Ee][+-]?[1-9][0-9]*)?;
 INT : [1-9][0-9]*;
 ID : [_a-zA-Z][a-zA-Z0-9_]*;
 WHITE : [ \t\r\n]+ -> skip;
-ASCII : [a-zA-Z0-9,. :;()]*;
 HASH : [#];

@@ -1,4 +1,4 @@
-// Generated from C:/Users/Miriam/Desktop/GitHub/Compiler_construction_lecture\Pipifax.g4 by ANTLR 4.9.1
+// Generated from /home/tobi/coding/school/compilerwerkzeuge/Compiler_construction_lecture/Pipifax.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -15,12 +15,6 @@ public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrg(PipifaxParser.PrgContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link PipifaxParser#expressions}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpressions(PipifaxParser.ExpressionsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PipifaxParser#identifier}.
 	 * @param ctx the parse tree
@@ -141,4 +135,10 @@ public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOperator(PipifaxParser.OperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr(PipifaxParser.ExprContext ctx);
 }

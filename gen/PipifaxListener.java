@@ -1,4 +1,4 @@
-// Generated from C:/Users/Miriam/Desktop/GitHub/Compiler_construction_lecture\Pipifax.g4 by ANTLR 4.9.1
+// Generated from /home/tobi/coding/school/compilerwerkzeuge/Compiler_construction_lecture/Pipifax.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -16,16 +16,6 @@ public interface PipifaxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrg(PipifaxParser.PrgContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PipifaxParser#expressions}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpressions(PipifaxParser.ExpressionsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PipifaxParser#expressions}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpressions(PipifaxParser.ExpressionsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PipifaxParser#identifier}.
 	 * @param ctx the parse tree
@@ -226,4 +216,14 @@ public interface PipifaxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOperator(PipifaxParser.OperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpr(PipifaxParser.ExprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpr(PipifaxParser.ExprContext ctx);
 }
