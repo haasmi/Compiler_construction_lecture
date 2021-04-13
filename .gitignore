@@ -102,3 +102,5 @@ runtime/Cpp/demo/generated
 xcuserdata
 *.jar
 .vscode
+
+.geany
