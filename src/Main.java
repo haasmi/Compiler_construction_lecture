@@ -7,9 +7,12 @@ import org.antlr.v4.runtime.RecognitionException;
 
 class Main {
 	public static void main(String[] args) {
-		try {
-			CharStream stream = CharStreams.fromFileName("C://Users/Miriam/Desktop/GitHub/Compiler_construction_lecture/src/input.tst");
-			Lexer lexer = new ExprLexer(stream);
+		//try {
+			//CharStream stream = CharStreams.fromFileName("C://Users/Miriam/Desktop/GitHub/Compiler_construction_lecture/src/input.tst");
+			Pfx pipifax = new Pfx();
+			pipifax.main(args);
+
+			/*Lexer lexer = new ExprLexer(stream);
 			CommonTokenStream tokens = new CommonTokenStream(lexer);
 			ExprParser parser = new ExprParser(tokens);
 			ExprParser.ProgContext ast = parser.prog();
@@ -23,7 +26,7 @@ class Main {
 		}
 		catch (RecognitionException e) {
 			System.err.println("Syntax error: "+e);
-		}
+		}*/
 		
 	}
 }

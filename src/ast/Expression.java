@@ -7,7 +7,7 @@ public abstract class Expression extends AST {
         this.type = type;
     }
 
-    public Type type() {
+    public Type getType() {
         return this.type;
     }
 }

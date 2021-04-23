@@ -1,1 +1,2 @@
-100+2*34
+var a int
+var b string

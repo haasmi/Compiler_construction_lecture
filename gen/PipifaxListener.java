@@ -1,4 +1,4 @@
-// Generated from /home/tobi/coding/school/compilerwerkzeuge/Compiler_construction_lecture/Pipifax.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Miriam/Desktop/GitHub/Compiler_construction_lecture\Pipifax.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -176,6 +176,16 @@ public interface PipifaxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfStatement(PipifaxParser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PipifaxParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileStatement(PipifaxParser.WhileStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PipifaxParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileStatement(PipifaxParser.WhileStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PipifaxParser#statements}.
 	 * @param ctx the parse tree

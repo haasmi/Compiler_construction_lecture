@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Collection;
 
 public abstract class AST {
+
+	public int memSize;
 	public abstract <T> T accept(Visitor<T> visitor);
 	
 	public Collection<AST> children() {

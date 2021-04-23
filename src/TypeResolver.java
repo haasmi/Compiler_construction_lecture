@@ -11,7 +11,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch");
         }
         e.setType(ltype);
-        return e.type();
+        return e.getType();
     }
 
     private Type visitCompExpr(CompExpression e) {
@@ -21,7 +21,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch");
         }
         e.setType(IntegerType.instance());
-        return e.type();
+        return e.getType();
     }
 
     private Type visitLogicalExpr(LogicalExpression e) {
@@ -31,7 +31,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch");
         }
         e.setType(IntegerType.instance());
-        return e.type();
+        return e.getType();
     }
 
     public Type visit(AddExpr n) {
@@ -88,7 +88,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             }
         }
         n.setType(f.returnParameter().type());
-        return n.type();
+        return n.getType();
     }
 
     //~ public Type visit(CallStmt n) {}
@@ -103,12 +103,12 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Cast of non-numeric value.");
         }
         n.setType(DoubleType.instance());
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(DoubleLiteral n) {
         n.setType(DoubleType.instance());
-        return n.type();
+        return n.getType();
     }
 
     //~ public Type visit(DoubleType n) {}
@@ -136,12 +136,12 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Cast of non-numeric value.");
         }
         n.setType(IntegerType.instance());
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(IntegerLiteral n) {
         n.setType(IntegerType.instance());
-        return n.type();
+        return n.getType();
     }
 
     //~ public Type visit(IntegerType n) {}
@@ -159,7 +159,7 @@ public class TypeResolver extends BaseVisitor<Type> {
 
     public Type visit(LValueExpr n) {
         n.setType(n.lvalue().accept(this));
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(ModExpr n) {
@@ -176,7 +176,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch");
         }
         n.setType(t);
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(NotEqExpr n) {
@@ -189,7 +189,7 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch");
         }
         n.setType(IntegerType.instance());
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(OrExpr n) {
@@ -208,12 +208,12 @@ public class TypeResolver extends BaseVisitor<Type> {
             throw new SemanticError("Type mismatch.");
         }
         n.setType(IntegerType.instance());
-        return n.type();
+        return n.getType();
     }
 
     public Type visit(StringLiteral n) {
         n.setType(StringType.instance());
-        return n.type();
+        return n.getType();
     }
 
     //~ public Type visit(StringType n) {}

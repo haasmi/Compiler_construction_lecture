@@ -1,7 +1,7 @@
 grammar Pfx;
 
 program
-  : ( variable | function )*
+  : ( variable | function | assignment)*
   ;
 
 variable

@@ -1,4 +1,4 @@
-// Generated from /home/tobi/coding/school/compilerwerkzeuge/Compiler_construction_lecture/Pipifax.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Miriam/Desktop/GitHub/Compiler_construction_lecture\Pipifax.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -111,6 +111,12 @@ public interface PipifaxVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIfStatement(PipifaxParser.IfStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PipifaxParser#whileStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhileStatement(PipifaxParser.WhileStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PipifaxParser#statements}.
 	 * @param ctx the parse tree
