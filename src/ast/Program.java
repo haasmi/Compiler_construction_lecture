@@ -24,4 +24,12 @@ public class Program extends AST {
 		children.addAll(functions);
 		return children;
 	}
+
+	public List<GlobalVariable> globals() {
+		return this.globals;
+	}
+
+	public List<Function> functions() {
+		return this.functions;
+	}
 }

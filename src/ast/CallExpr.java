@@ -9,6 +9,8 @@ public class CallExpr extends Expression {
 	private String name;
 	private List<Expression> arguments;
 
+	private Function function;
+
 	public CallExpr(String name, List<Expression> args) {
 		this.name = name;
 		this.arguments = args;
@@ -30,5 +32,13 @@ public class CallExpr extends Expression {
 
 	public List<Expression> arguments() {
 		return arguments;
+	}
+
+	public void setFunction(Function function) {
+		this.function = function;
+	}
+
+	public Function function() {
+		return this.function;
 	}
 }

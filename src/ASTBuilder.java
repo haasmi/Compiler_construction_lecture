@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class ASTBuilder extends PfxBaseVisitor<AST> {
 
 	public AST visitProgram(PfxParser.ProgramContext ctx) {
-		List<GlobalVariable> globalVariables = new ArrayList<>();
+		List<GlobalVariable> globals = new ArrayList<>();
 		for (PfxParser.VariableContext c : ctx.variable()) {
 			GlobalVariable g = (GlobalVariable) c.accept(this);
-			globalVariables.add(g);
+			globals.add(g);
 		}
 
 		List<Function> functions = new ArrayList<>();
@@ -17,7 +17,7 @@ public class ASTBuilder extends PfxBaseVisitor<AST> {
 			functions.add(f);
 		}
 
-		Program program = new Program(globalVariables, functions);
+		Program program = new Program(globals, functions);
 		return program;
 	}
 
@@ -183,7 +183,7 @@ public class ASTBuilder extends PfxBaseVisitor<AST> {
 			return new ModExpr(l, r);
 			
 		default:
-			throw new SemanticError("Illegal operator " + op);
+			throw new SemanticError(ctx.getStart().getLine(), "Illegal operator " + op);
 		}
 	}
 
@@ -198,7 +198,7 @@ public class ASTBuilder extends PfxBaseVisitor<AST> {
 			return new NotExpr(e);
 			
 		default:
-			throw new SemanticError("Illegal operator " + op);
+			throw new SemanticError(ctx.getStart().getLine(), "Illegal operator " + op);
 		}
 	}
 
@@ -219,7 +219,7 @@ public class ASTBuilder extends PfxBaseVisitor<AST> {
 			return new SubExpr(l, r);
 			
 		default:
-			throw new SemanticError("Illegal operator " + op);
+			throw new SemanticError(ctx.getStart().getLine(), "Illegal operator " + op);
 		}
 	}
 
@@ -250,7 +250,7 @@ public class ASTBuilder extends PfxBaseVisitor<AST> {
 			return new StrcmpExpr(l, r);
 			
 		default:
-			throw new SemanticError("Illegal operator " + op);
+			throw new SemanticError(ctx.getStart().getLine(), "Illegal operator " + op);
 		}
 	}
 

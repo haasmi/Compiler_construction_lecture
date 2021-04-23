@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 
 /** Represents {...} */
-public class Block extends AST implements Iterable<Statement> {
+public class Block extends AST {
 	private List<Statement> statements;
 
 	public Block() {
@@ -28,7 +27,7 @@ public class Block extends AST implements Iterable<Statement> {
 		return visitor.visit(this);
 	}
 
-	public Iterator<Statement> iterator() {
-		return statements.iterator();
+	public List<Statement> statements() {
+		return this.statements;
 	}
 }

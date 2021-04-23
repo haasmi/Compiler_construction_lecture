@@ -37,6 +37,7 @@ public interface Visitor<T> {
 	T visit(Parameter n);
 	T visit(Program n);
 	T visit(ReferenceType n);
+	T visit(ReturnParameter n);
 	T visit(StrcmpExpr n);
 	T visit(StringLiteral n);
 	T visit(StringType n);

@@ -2,16 +2,24 @@ package ast;
 
 /** Type of a function without a return type */
 public class VoidType extends Type {
-	private static VoidType instance = new VoidType();
-	
-	private VoidType() {
-	}
+    private static VoidType instance = new VoidType();
 
-	public static VoidType instance() {
-		return instance;
-	}
+    private VoidType() {
+    }
 
-	public <T> T accept(Visitor<T> visitor) {
-		return visitor.visit(this);
-	}
+    public static VoidType instance() {
+        return instance;
+    }
+
+    public <T> T accept(Visitor<T> visitor) {
+        return visitor.visit(this);
+    }
+
+    public boolean isCompatible(Type rhs) {
+        return false;
+    }
+
+    public int size() {
+        return 0;
+    }
 }

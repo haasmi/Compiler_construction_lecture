@@ -1,16 +1,24 @@
 package ast;
 
 public class DoubleType extends Type {
-	private static DoubleType instance = new DoubleType();
-	
-	private DoubleType() {
-	}
+    private static DoubleType instance = new DoubleType();
 
-	public static DoubleType instance() {
-		return instance;
-	}
+    private DoubleType() {
+    }
 
-	public <T> T accept(Visitor<T> visitor) {
-		return visitor.visit(this);
-	}
+    public static DoubleType instance() {
+        return instance;
+    }
+
+    public <T> T accept(Visitor<T> visitor) {
+        return visitor.visit(this);
+    }
+
+    public boolean isNumeric() {
+        return true;
+    }
+
+    public int size() {
+        return 8;
+    }
 }

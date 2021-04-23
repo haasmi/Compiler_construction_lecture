@@ -1,0 +1,48 @@
+import ast.*;
+
+public class YYY extends BaseVisitor<XXX> {
+    //~ public XXX visit(AddExpr n) {}
+    //~ public XXX visit(AndExpr n) {}
+    //~ public XXX visit(ArrayAccess n) {}
+    //~ public XXX visit(ArrayType n) {}
+    //~ public XXX visit(Assignment n) {}
+    //~ public XXX visit(BaseArrayType n) {}
+    //~ public XXX visit(Block n) {}
+    //~ public XXX visit(CallExpr n) {}
+    //~ public XXX visit(CallStmt n) {}
+    //~ public XXX visit(DivExpr n) {}
+    //~ public XXX visit(DoubleCastExpr n) {}
+    //~ public XXX visit(DoubleLiteral n) {}
+    //~ public XXX visit(DoubleType n) {}
+    //~ public XXX visit(EqExpr n) {}
+    //~ public XXX visit(Function n) {}
+    //~ public XXX visit(GlobalVariable n) {}
+    //~ public XXX visit(GreaterEqExpr n) {}
+    //~ public XXX visit(GreaterExpr n) {}
+    //~ public XXX visit(IfStmt n) {}
+    //~ public XXX visit(IntegerCastExpr n) {}
+    //~ public XXX visit(IntegerLiteral n) {}
+    //~ public XXX visit(IntegerType n) {}
+    //~ public XXX visit(LessEqExpr n) {}
+    //~ public XXX visit(LessExpr n) {}
+    //~ public XXX visit(LocalVariable n) {}
+    //~ public XXX visit(LocalVariableDeclaration n) {}
+    //~ public XXX visit(LValueExpr n) {}
+    //~ public XXX visit(ModExpr n) {}
+    //~ public XXX visit(MultExpr n) {}
+    //~ public XXX visit(NegExpr n) {}
+    //~ public XXX visit(NotEqExpr n) {}
+    //~ public XXX visit(NotExpr n) {}
+    //~ public XXX visit(OrExpr n) {}
+    //~ public XXX visit(Parameter n) {}
+    //~ public XXX visit(Program n) {}
+    //~ public XXX visit(ReferenceType n) {}
+    //~ public XXX visit(ReturnParameter n) {}
+    //~ public XXX visit(StrcmpExpr n) {}
+    //~ public XXX visit(StringLiteral n) {}
+    //~ public XXX visit(StringType n) {}
+    //~ public XXX visit(SubExpr n) {}
+    //~ public XXX visit(VariableAccess n) {}
+    //~ public XXX visit(VoidType n) {}
+    //~ public XXX visit(WhileStmt n) {}
+}
